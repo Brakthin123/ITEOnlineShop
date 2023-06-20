@@ -3,32 +3,41 @@ package kh.edu.rupp.ite.onlineshop.api.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Profile {
-    @SerializedName("first_name")
-    private String firstName;
-    @SerializedName("last_name")
-    private String lastName;
+    private String first_name;
+    private String last_name;
     private String email;
     @SerializedName("phone-number")
-    private String phoneNumber;
+    private String phone_number;
     private String gender;
     @SerializedName("image-url")
-    private String imageUrl;
+    private String image_url;
     private String birthday;
 
-    public String getFirstName() {
-        return firstName;
+    private String address = "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678";
+
+
+    public String getAddress() {
+        return address;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getEmail() {
@@ -39,12 +48,12 @@ public class Profile {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public String getGender() {
@@ -55,12 +64,12 @@ public class Profile {
         this.gender = gender;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
     public String getBirthday() {

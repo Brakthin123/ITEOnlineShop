@@ -76,8 +76,6 @@ public class ProductFragment extends Fragment {
         binding.recyclerViewProduct.setLayoutManager(layoutManager);
 
 
-
-
         ProductAdapter adapter = new ProductAdapter();
         adapter.submitList(productList);
         binding.recyclerViewProduct.setAdapter(adapter);
