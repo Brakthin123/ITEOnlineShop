@@ -76,6 +76,7 @@ public class ProfileFragment extends Fragment {
     }
     private void showProfile(Profile profile) {
 
+
         String fullName = (profile.getFirst_name() + " "+ profile.getLast_name());
 
         Picasso.get().load(profile.getImage_url()).into(binding.imageViewProfile);

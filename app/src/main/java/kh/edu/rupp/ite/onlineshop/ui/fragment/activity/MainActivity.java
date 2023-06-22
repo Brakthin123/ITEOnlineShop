@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        showFragment(new HomeFragment());
 
         // button item action to fragment
         binding.buttonNavigation.setOnItemSelectedListener(item -> {
