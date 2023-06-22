@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()){
+                    showProductHome(response.body());
                     showProduct(response.body());
                 } else {
                     Toast.makeText(getContext(),"Load product list failed", Toast.LENGTH_LONG).show();
@@ -81,6 +82,18 @@ public class HomeFragment extends Fragment {
         HomeAdapter adapter = new HomeAdapter();
         adapter.submitList(productList);
         binding.recyclerViewHome.setAdapter(adapter);
+
+
+    }
+    private void showProductHome(List<Product> productList){
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        binding.recyclerViewHome2.setLayoutManager(layoutManager);
+
+
+        ProductAdapter adapter = new ProductAdapter();
+        adapter.submitList(productList);
+        binding.recyclerViewHome2.setAdapter(adapter);
 
 
     }
