@@ -24,7 +24,7 @@
         android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewProfile"
             android:layout_width="96dp"
             android:layout_height="96dp"
@@ -32,7 +32,9 @@
             android:src="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedSquare"
+            android:contentDescription="@string/image" />
 
         <TextView
             android:id="@+id/textViewName"
@@ -40,7 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Full Name"
+            android:text="@string/full_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imageView3"
             app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
@@ -51,7 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Email"
+            android:text="@string/email"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewName"
             app:layout_constraintTop_toBottomOf="@+id/textViewName" />
@@ -64,7 +69,8 @@
             app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textViewName"
-            app:srcCompat="@drawable/baseline_edit_note_24" />
+            app:srcCompat="@drawable/baseline_edit_note_24"
+            android:contentDescription="@string/edit" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -78,62 +84,90 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:text="@string/email"/>
 
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="email@abc.com"
-            android:minHeight="48dp" />
+            android:hint="@string/email_abc_com"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            android:autofillHints="null"
+            android:inputType="textEmailSubject"
+            tools:ignore="VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Phone Number"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/phone_number"/>
 
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="0000 0000 0000"
-            android:minHeight="48dp" />
+            android:hint="@string/_0000_0000_0000"
+            android:minHeight="48dp"
+
+            android:textSize="16sp"
+            tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Gender" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/gender" />
 
         <EditText
             android:id="@+id/editTextGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Male"
-            android:minHeight="48dp" />
+            android:hint="@string/male"
+            android:minHeight="48dp"
+            android:shadowColor="#4E2A2A"
+            android:textSize="16sp"
+            tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Birthday"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/birthday"/>
 
         <EditText
             android:id="@+id/editTextBirthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DD-MM-YYYY"
-            android:minHeight="48dp" />
+            android:hint="@string/dd_mm_yyyy"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Address"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/address"/>
 
         <TextView
             android:id="@+id/textViewAddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+
+            android:background="@drawable/border_address"
+            android:hint="Set Address"
+            android:padding="10sp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
 
     </LinearLayout>

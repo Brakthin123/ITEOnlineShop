@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
 
     private void loadProduct(){
         Retrofit http = new Retrofit.Builder()
-                .baseUrl("https://ferupp.s3.ap-southeast-1.amazonaws.com")
+                .baseUrl("https://raw.githubusercontent.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

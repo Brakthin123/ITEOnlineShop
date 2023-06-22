@@ -8,16 +8,19 @@
     android:layout_marginTop="16dp"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imgHome"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:scaleType="centerCrop"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="ContentDescription,ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"/>
     <TextView
         android:id="@+id/textHomePrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="100 $"/>
+        android:text="100 $"
+        tools:ignore="HardcodedText" />
 </LinearLayout>
