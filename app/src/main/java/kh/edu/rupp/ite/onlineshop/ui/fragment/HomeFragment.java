@@ -18,7 +18,6 @@ import java.util.List;
 import kh.edu.rupp.ite.onlineshop.api.model.Product;
 import kh.edu.rupp.ite.onlineshop.api.service.ApiService;
 import kh.edu.rupp.ite.onlineshop.databinding.FragmentHomeBinding;
-import kh.edu.rupp.ite.onlineshop.databinding.FragmentProductBinding;
 import kh.edu.rupp.ite.onlineshop.ui.fragment.adapter.HomeAdapter;
 import kh.edu.rupp.ite.onlineshop.ui.fragment.adapter.ProductAdapter;
 import retrofit2.Call;
@@ -47,7 +46,7 @@ public class HomeFragment extends Fragment {
 
     private void loadProduct(){
         Retrofit http = new Retrofit.Builder()
-                .baseUrl("https://ferupp.s3.ap-southeast-1.amazonaws.com")
+                .baseUrl("https://raw.githubusercontent.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -56,7 +55,7 @@ public class HomeFragment extends Fragment {
         Call<List<Product>> task = apiService.loadProductList();
         task.enqueue(new Callback<List<Product>>() {
             @Override
-            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+            public void onResponse(@NonNull Call<List<Product>> call, @NonNull Response<List<Product>> response) {
                 if (response.isSuccessful()){
                     showProductHome(response.body());
                     showProduct(response.body());
@@ -66,7 +65,7 @@ public class HomeFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<Product>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Product>> call, @NonNull Throwable t) {
                 Toast.makeText(getContext(),"Load product list failed!", Toast.LENGTH_LONG).show();
                 Log.e("[ProductFragment]", "Load product failed: " + t.getMessage());
                 t.printStackTrace();

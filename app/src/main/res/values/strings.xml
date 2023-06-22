@@ -10,4 +10,20 @@
     <string name="profile_">Profile</string>
     <string name="email">Email</string>
     <string name="todo">TODO</string>
+    <string name="dd_mm_yyyy">DD-MM-YYYY</string>
+    <string name="image">image</string>
+    <string name="full_name">Full Name</string>
+    <string name="edit">edit</string>
+    <string name="email_abc_com">email@abc.com</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="_0000_0000_0000">0000 0000 0000</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="birthday">Birthday</string>
+    <string name="address">Address</string>
+    <string name="history">History</string>
+    <string name="logout">Logout</string>
+    <string name="favorite">Favorite</string>
+    <string name="booking">Booking</string>
+    <string name="products">Products</string>
 </resources>

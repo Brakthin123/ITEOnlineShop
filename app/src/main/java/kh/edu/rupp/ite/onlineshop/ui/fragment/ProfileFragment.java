@@ -1,7 +1,6 @@
 package kh.edu.rupp.ite.onlineshop.ui.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.gson.GsonBuilder;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 import kh.edu.rupp.ite.onlineshop.api.model.Profile;
 import kh.edu.rupp.ite.onlineshop.api.service.ApiService;
@@ -46,7 +42,7 @@ public class ProfileFragment extends Fragment {
 
     private void loadProfile(){
         Retrofit httpClient = new Retrofit.Builder()
-                .baseUrl("https://ferupp.s3.ap-southeast-1.amazonaws.com")
+                .baseUrl("https://raw.githubusercontent.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create()))
                 .build();
@@ -58,7 +54,7 @@ public class ProfileFragment extends Fragment {
         Call<Profile> task = apiService.loadProfileList();
         task.enqueue(new Callback<Profile>() {
             @Override
-            public void onResponse(Call<Profile> call, Response<Profile> response) {
+            public void onResponse(@NonNull Call<Profile> call, @NonNull Response<Profile> response) {
                 if(response.isSuccessful()){
                     assert response.body() != null;
                     showProfile(response.body());
@@ -68,7 +64,7 @@ public class ProfileFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<Profile> call, Throwable t) {
+            public void onFailure(@NonNull Call<Profile> call, @NonNull Throwable t) {
                 Toast.makeText(getContext(),"Data Failed . . .",Toast.LENGTH_LONG).show();
             }
         });
